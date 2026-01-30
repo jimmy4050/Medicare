@@ -18,10 +18,27 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const saved = localStorage.getItem('theme');
+    return saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
+
   return (
     <Router>
-      <div className="min-h-screen flex flex-col font-sans bg-white selection:bg-medical-100 selection:text-medical-900">
-        <Navbar />
+      <div className="min-h-screen flex flex-col font-sans bg-white dark:bg-slate-900 selection:bg-medical-100 selection:text-medical-900 dark:selection:bg-medical-900 dark:selection:text-medical-100">
+        <Navbar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
         <ScrollToTop />
         <main className="flex-grow">
           <Routes>
