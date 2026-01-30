@@ -13,7 +13,7 @@ import {
   Layers,
   Settings
 } from 'lucide-react';
-import { NavItem, FeatureItem, ProductModule } from './types';
+import { NavItem, FeatureItem, ProductModule } from './types.ts';
 
 export const NAV_LINKS: NavItem[] = [
   { label: 'Home', href: '/' },

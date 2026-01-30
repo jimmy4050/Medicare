@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, ChevronRight } from 'lucide-react';
-import { HIMS_MODULES, LIMS_MODULES } from '../constants';
+import { HIMS_MODULES, LIMS_MODULES } from '../constants.tsx';
 
 const Products: React.FC = () => {
   return (

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, HeartPulse, ChevronRight, Sun, Moon } from 'lucide-react';
-import { NAV_LINKS } from '../constants';
+import { NAV_LINKS } from '../constants.tsx';
 
 interface NavbarProps {
   isDarkMode: boolean;

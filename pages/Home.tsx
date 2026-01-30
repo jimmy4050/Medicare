@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Hospital } from 'lucide-react';
-import { KEY_FEATURES } from '../constants';
+import { KEY_FEATURES } from '../constants.tsx';
 
 const Home: React.FC = () => {
   return (
